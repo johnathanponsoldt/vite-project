@@ -4,7 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState( [
+    {id: 1, name: "Basketball", price: 60, description: "High Quality Basketball"},
+    {id: 2, name: "Football", price: 40, description: "High Quality Football"},
+
+  ]);
 
   return (
     <>
@@ -16,7 +20,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Product Dashboard</h1>
+      <AddProductForm addProduct={addProduct} />
+      <ProductList products={products} />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
